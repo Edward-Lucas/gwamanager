@@ -58,7 +58,7 @@ project intentionally avoids advertising and analytics SDKs.
 
 The current GitHub release includes the signed APK:
 
-[Download `gwa_manager.apk`](https://github.com/Edward-Lucas/gwamanager/releases/download/v1.0.1/gwa_manager.apk)
+[Download `gwa_manager.apk`](https://github.com/Edward-Lucas/gwamanager/releases/download/v1.0.2/gwa_manager.apk)
 
 The application ID is `io.github.edwardlucas.gwamanager`.
 
