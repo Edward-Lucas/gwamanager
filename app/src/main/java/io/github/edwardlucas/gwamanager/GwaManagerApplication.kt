@@ -52,4 +52,8 @@ class GwaManagerApplication : Application() {
             }
         }
     }
+
+    fun warmUpGeckoRuntime() {
+        getGeckoRuntime().warmUp()
+    }
 }

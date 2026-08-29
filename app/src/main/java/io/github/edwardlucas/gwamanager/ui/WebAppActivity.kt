@@ -69,6 +69,7 @@ class WebAppActivity : AppCompatActivity() {
             return
         }
 
+        app.warmUpGeckoRuntime()
         geckoView = GeckoView(this)
         val root = FrameLayout(this)
         contentRoot = root

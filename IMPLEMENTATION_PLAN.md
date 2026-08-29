@@ -627,6 +627,38 @@ WebApp에서 음악 재생
 
 ---
 
+## Phase 10. WebApp 로딩 및 GeckoSession 재사용
+
+### 목표
+
+WebApp을 다시 열 때 이미 실행 중인 웹페이지를 유지하여, 저장된 정지 화면이
+아닌 실제 상호작용 가능한 GeckoSession을 즉시 표시한다.
+
+### 실행 정책
+
+- 최초 실행 또는 프로세스 종료 후에는 단일 GeckoRuntime을 예열한 뒤
+  GeckoSession을 생성하고 URL을 로드한다.
+- Activity가 사라져도 WebApp의 GeckoSession을 닫지 않고 애플리케이션 범위에서
+  유지한다.
+- 프로세스가 살아 있는 동안 WebApp을 다시 열면 기존 GeckoSession을
+  GeckoView에 재연결하며 같은 URL을 중복 로드하지 않는다.
+- URL 또는 User-Agent 설정이 변경되면 해당 세션을 새로 구성한다.
+- 프로세스가 종료되면 메모리상의 GeckoSession도 사라지므로, URL을 다시
+  로드해야 한다.
+- HTTP 캐시는 GeckoView의 기본 정책을 사용하며, 전체 페이지를 정지 이미지로
+  저장해 상호작용 가능한 페이지처럼 사용하지 않는다.
+
+### 작업
+
+- `GeckoRuntime.warmUp()`을 WebApp 화면 구성 전에 호출한다.
+- GeckoSession 생성과 재사용 경로를 Logcat에서 구분할 수 있게 한다.
+- 냉시작, 온시작, Activity 재생성, 프로세스 강제 종료 후 재실행을 태블릿에서
+  비교한다.
+- 세션 재사용이 알림, 미디어 재생, 전체화면, WebExtension 동작을 깨뜨리지
+  않는지 확인한다.
+
+---
+
 ## 6. 반드시 구현할 것
 
 ### 필수 기능

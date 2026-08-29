@@ -19,6 +19,7 @@ class SessionManager {
         return synchronized(lock) {
             val existing = sessions[key]
             if (existing != null && existing.session.isOpen) {
+                Log.d(TAG, "Reusing GeckoSession for WebApp $webAppId ($userAgentMode).")
                 existing.session
             } else {
                 val settings = GeckoSessionSettings.Builder()
