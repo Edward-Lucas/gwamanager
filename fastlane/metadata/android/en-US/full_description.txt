@@ -1,0 +1,16 @@
+Gecko Web App Manager lets you register frequently used websites and run them
+as independent WebApps on Android.
+
+Features:
+
+* Register multiple WebApps with a name, URL, and mobile or desktop User-Agent.
+* Preserve shared GeckoView browsing data for convenient sign-in and cookies.
+* Add WebApps to the launcher with website icons.
+* Show each WebApp separately in the recent-apps screen.
+* Support web notifications, media playback controls, and web fullscreen.
+* Install WebExtensions from local XPI files or Mozilla Add-ons.
+
+GWA Manager does not include advertising or analytics SDKs. Websites opened by
+the user may make their own network requests.
+
+The application is free and open source under the Mozilla Public License 2.0.

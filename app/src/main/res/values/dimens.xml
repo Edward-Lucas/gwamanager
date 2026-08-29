@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="screen_padding">24dp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_padding">20dp</dimen>
+    <dimen name="toolbar_height">64dp</dimen>
+    <dimen name="section_spacing">28dp</dimen>
+    <dimen name="card_corner_radius">20dp</dimen>
+    <dimen name="card_elevation">1dp</dimen>
+    <dimen name="card_stroke_width">1dp</dimen>
+    <dimen name="button_spacing">8dp</dimen>
+    <dimen name="content_bottom_padding">32dp</dimen>
+    <dimen name="launcher_icon_inset">30dp</dimen>
+</resources>

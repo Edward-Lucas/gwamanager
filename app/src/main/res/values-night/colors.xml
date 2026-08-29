@@ -1,0 +1,18 @@
+<resources>
+    <color name="gwamanager_primary">#FFD0BCFF</color>
+    <color name="gwamanager_on_primary">#FF381E72</color>
+    <color name="gwamanager_primary_container">#FF4F378B</color>
+    <color name="gwamanager_on_primary_container">#FFEADDFF</color>
+    <color name="gwamanager_secondary">#FFCCC2DC</color>
+    <color name="gwamanager_on_secondary">#FF332D41</color>
+    <color name="gwamanager_secondary_container">#FF4A4458</color>
+    <color name="gwamanager_on_secondary_container">#FFE8DEF8</color>
+    <color name="gwamanager_surface">#FF141218</color>
+    <color name="gwamanager_on_surface">#FFE6E1E9</color>
+    <color name="gwamanager_surface_variant">#FF49454F</color>
+    <color name="gwamanager_on_surface_variant">#FFCAC4D0</color>
+    <color name="gwamanager_outline">#FF938F99</color>
+    <color name="gwamanager_outline_variant">#FF49454F</color>
+    <color name="gwamanager_background">#FF141218</color>
+    <color name="gwamanager_on_background">#FFE6E1E9</color>
+</resources>

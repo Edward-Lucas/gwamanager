@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "GWA Manager Global Extension",
+  "version": "1.0.0",
+  "description": "Common behavior for WebApps managed by GWA Manager.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "global-extension@gwamanager.local"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
