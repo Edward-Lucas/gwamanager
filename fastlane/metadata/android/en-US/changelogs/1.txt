@@ -1,0 +1,3 @@
+Initial public release of GWA Manager with GeckoView-based WebApps,
+launcher shortcuts, notifications, media controls, fullscreen support,
+and WebExtension installation.
