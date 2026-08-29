@@ -1,6 +1,6 @@
 # GWA Manager
 
-**Gecko Web App Manager** is an Android application for running frequently
+**GWA Manager** is an Android application for running frequently
 used websites as independent WebApps with Mozilla GeckoView.
 
 ## Features
@@ -31,6 +31,10 @@ gradlew.bat :app:testDebugUnitTest :app:assembleDebug --no-daemon --console=plai
 ```
 
 The application ID is `io.github.edwardlucas.gwamanager`.
+Release builds use the local signing properties file
+`%USERPROFILE%\.gradle\gwa-manager-signing.properties` when present; otherwise
+the release APK is unsigned. Keep the keystore and its password outside the
+repository.
 
 ## License
 

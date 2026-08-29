@@ -1,5 +1,17 @@
+import java.io.File
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
+}
+
+val releaseSigningPropertiesFile = File(
+    System.getProperty("user.home"),
+    ".gradle/gwa-manager-signing.properties"
+)
+val releaseSigningProperties = Properties()
+if (releaseSigningPropertiesFile.isFile) {
+    releaseSigningPropertiesFile.inputStream().use(releaseSigningProperties::load)
 }
 
 android {
@@ -18,10 +30,40 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        if (releaseSigningPropertiesFile.isFile) {
+            create("release") {
+                storeFile = file(
+                    requireNotNull(releaseSigningProperties.getProperty("storeFile")) {
+                        "Missing storeFile in $releaseSigningPropertiesFile"
+                    }
+                )
+                storePassword = requireNotNull(
+                    releaseSigningProperties.getProperty("storePassword")
+                ) {
+                    "Missing storePassword in $releaseSigningPropertiesFile"
+                }
+                keyAlias = requireNotNull(
+                    releaseSigningProperties.getProperty("keyAlias")
+                ) {
+                    "Missing keyAlias in $releaseSigningPropertiesFile"
+                }
+                keyPassword = requireNotNull(
+                    releaseSigningProperties.getProperty("keyPassword")
+                ) {
+                    "Missing keyPassword in $releaseSigningPropertiesFile"
+                }
+                storeType = "PKCS12"
+            }
+        }
+    }
     buildTypes {
         release {
             optimization {
                 enable = false
+            }
+            if (releaseSigningPropertiesFile.isFile) {
+                signingConfig = signingConfigs.getByName("release")
             }
         }
     }

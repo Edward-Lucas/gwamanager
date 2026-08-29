@@ -9,3 +9,6 @@ captures/
 .externalNativeBuild/
 .cxx/
 gradle/gradle-daemon-jvm.properties
+*.jks
+*.keystore
+*.p12
